@@ -1,0 +1,27 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+export default function Products() {
+  const mockProducts = [
+    { id: 1, name: 'Gold', quantity: 50 },
+    { id: 2, name: 'Silver', quantity: 100 },
+  ];
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mb-4">Products</h2>
+      <table className="table-auto w-full">
+        <thead><tr><th>Name</th><th>Quantity</th><th>Actions</th></tr></thead>
+        <tbody>
+          {mockProducts.map(p => (
+            <tr key={p.id}>
+              <td>{p.name}</td>
+              <td>{p.quantity}</td>
+              <td><Link to={`/products/${p.id}/edit`} className="text-blue-500">Edit</Link></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
