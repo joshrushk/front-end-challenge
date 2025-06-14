@@ -1,4 +1,3 @@
-// src/components/navbar.jsx
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
